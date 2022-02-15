@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50vw;
+  margin: auto;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+}

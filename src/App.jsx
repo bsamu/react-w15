@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import http from 'axios'
 
 function App() {
@@ -63,6 +63,8 @@ function App() {
       })
       console.log(authUser, authPassword);
       setSectionToAppear('todos')
+      localStorage.setItem('user', authUser)
+      localStorage.setItem('password', authPassword)
 
     } catch (err) {
       alert('Wrong username or password')
@@ -70,10 +72,22 @@ function App() {
   }
 
   const signOut = () => {
+    localStorage.removeItem('user', authUser)
+    localStorage.removeItem('password', authPassword)
+
     setAuthUser('')
     setAuthPassword('')
     setSectionToAppear('login')
   }
+
+  useEffect(() => {
+    const user = localStorage.getItem('user')
+    const password = localStorage.getItem('password')
+    if (!user || !password) return;
+    setAuthUser(user)
+    setAuthPassword(password)
+    setSectionToAppear('todos')
+  }, [])
 
   return (
     <main>

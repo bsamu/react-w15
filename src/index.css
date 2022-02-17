@@ -27,3 +27,7 @@ button {
   filter: invert(1);
   margin: 10px;
 }
+
+main {
+  /* width: 50vw; */
+}

@@ -13,12 +13,17 @@ code {
 } */
 
 section {
-  margin: 100px auto;
+  margin: 10px auto;
   border: 1px solid black;
-  padding: 100px;
+  padding: 10px;
 }
 
 input {
   display: block;
+  margin: 10px;
+}
+
+button {
+  filter: invert(1);
   margin: 10px;
 }
